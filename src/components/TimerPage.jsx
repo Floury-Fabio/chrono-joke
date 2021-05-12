@@ -6,7 +6,9 @@ import TimeController from 'components/TimeController';
 
 const TimerPage = () => (
   <Timer
-    initialTime={55000}
+    formatValue={(value) => `${(value < 10 ? `0${value}` : value)}`}
+    lastUnit="m"
+    initialTime={61 * 1000 * 60}
     direction="backward"
     startImmediately={false}
   >
