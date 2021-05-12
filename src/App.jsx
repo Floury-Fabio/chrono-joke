@@ -1,5 +1,5 @@
 import React from 'react';
-import TimerPage from 'components/TimerPage';
+import TimerPage from 'pages/TimerPage';
 import './App.css';
 
 function App() {

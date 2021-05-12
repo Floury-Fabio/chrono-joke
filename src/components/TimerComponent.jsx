@@ -4,7 +4,7 @@ import TimeDisplayer from 'components/TimeDisplayer';
 
 import TimeController from 'components/TimeController';
 
-const TimerPage = () => (
+const TimerComponent = () => (
   <Timer
     formatValue={(value) => `${(value < 10 ? `0${value}` : value)}`}
     lastUnit="m"
@@ -24,4 +24,4 @@ const TimerPage = () => (
   </Timer>
 );
 
-export default TimerPage;
+export default TimerComponent;
