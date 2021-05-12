@@ -4,8 +4,10 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <TimerPage />
+    <div className="App bg-primary">
+      <header className="App-header">
+        <TimerPage />
+      </header>
     </div>
   );
 }
