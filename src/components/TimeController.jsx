@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Button from 'react-bootstrap/Button';
+
+import 'styles/TimeController.css';
+
 const TimeController = ({
   start, pause, resume, stop, reset,
 }) => (
   <div>
-    <button type="button" onClick={start}>Start</button>
-    <button type="button" onClick={pause}>Pause</button>
-    <button type="button" onClick={resume}>Resume</button>
-    <button type="button" onClick={stop}>Stop</button>
-    <button type="button" onClick={reset}>Reset</button>
+    <Button id="start-control-button" className="rounded-circle" variant="success" onClick={start}>Start</Button>
+    <Button id="pause-control-button" className="rounded-circle" variant="primary" onClick={pause}>Pause</Button>
+    <Button id="resume-control-button" className="rounded-circle" variant="info" onClick={resume}>Resume</Button>
+    <Button id="stop-control-button" className="rounded-circle" variant="danger" onClick={stop}>Stop</Button>
+    <Button id="reset-control-button" className="rounded-circle" variant="warning" onClick={reset}>Reset</Button>
   </div>
 );
 

@@ -13,11 +13,11 @@ const TimerPage = () => (
     {({
       start, resume, pause, stop, reset,
     }) => (
-      <>
+      <div className="bg-secondary p-5" style={{ borderRadius: '125px' }}>
         <TimeDisplayer Timer={Timer} />
         <br />
         <TimeController start={start} resume={resume} pause={pause} stop={stop} reset={reset} />
-      </>
+      </div>
     )}
   </Timer>
 );
