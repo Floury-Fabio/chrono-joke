@@ -1,14 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Timer from 'react-compound-timer';
 import TimeDisplayer from 'components/TimeDisplayer';
 
 import TimeController from 'components/TimeController';
 
-const TimerComponent = () => (
+const TimerComponent = ({ duration }) => (
   <Timer
     formatValue={(value) => `${(value < 10 ? `0${value}` : value)}`}
     lastUnit="m"
-    initialTime={61 * 1000 * 60}
+    initialTime={duration * 1000 * 60}
     direction="backward"
     startImmediately={false}
   >
@@ -23,5 +25,8 @@ const TimerComponent = () => (
     )}
   </Timer>
 );
-
 export default TimerComponent;
+
+TimerComponent.propTypes = {
+  duration: PropTypes.number.isRequired,
+};
