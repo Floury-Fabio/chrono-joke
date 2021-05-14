@@ -1,6 +1,6 @@
 import UPDATE_CURRENT_JOKE from 'redux/types/jokeTypes';
 
-const jokeReducer = (state = {}, action) => {
+const jokeReducer = (state = { currentJoke: '' }, action) => {
   switch (action.type) {
     case UPDATE_CURRENT_JOKE:
       return {
