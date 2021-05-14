@@ -9,7 +9,7 @@ import TimeDisplayer from 'components/TimeDisplayer';
 
 import getJoke from 'redux/middlewares/jokeMiddlewares';
 
-const Countdown = ({ duration }) => {
+const Countdown = ({ duration, setDuration }) => {
   const dispatch = useDispatch();
 
   return (
@@ -27,12 +27,12 @@ const Countdown = ({ duration }) => {
       ]}
     >
       {({
-        start, resume, pause, stop, reset,
+        start, pause, reset,
       }) => (
         <div className="bg-secondary p-5 rounded-125">
           <TimeDisplayer Timer={Timer} />
           <br />
-          <TimeController start={start} resume={resume} pause={pause} stop={stop} reset={reset} />
+          <TimeController start={start} pause={pause} reset={reset} setDuration={setDuration} />
         </div>
       )}
     </Timer>
@@ -43,4 +43,5 @@ export default Countdown;
 
 Countdown.propTypes = {
   duration: PropTypes.number.isRequired,
+  setDuration: PropTypes.func.isRequired,
 };

@@ -7,17 +7,10 @@
   margin-right: 5vh;
 }
 
-#resume-control-button{
-  margin-top: 12vh;
-  margin-right: 5vh;
-}
-
-#stop-control-button{
-  margin-top: 7vh;
-  margin-right: 5vh;
-}
 
 #reset-control-button{
+  margin-top: 7vh;
+  margin-right: 5vh;
 }
 
 .redo{
