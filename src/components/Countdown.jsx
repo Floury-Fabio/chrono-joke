@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
 import Timer from 'react-compound-timer';
+import useSound from 'use-sound';
 
 import TimeController from 'components/TimeController';
 import TimeDisplayer from 'components/TimeDisplayer';
 
 import getJoke from 'redux/middlewares/jokeMiddlewares';
 
+import ding from 'assets/sounds/ding.wav';
+
 const Countdown = ({ duration, setDuration }) => {
   const dispatch = useDispatch();
+  const [countdownIsEnd, setCountdownIsEnd] = useState(false);
+
+  const [play] = useSound(ding);
+
+  const fireJoke = () => {
+    dispatch(getJoke());
+    setCountdownIsEnd(true);
+    setCountdownIsEnd(false);
+  };
 
   return (
     <Timer
@@ -22,7 +34,7 @@ const Countdown = ({ duration, setDuration }) => {
       checkpoints={[
         {
           time: (0),
-          callback: () => dispatch(getJoke()),
+          callback: fireJoke,
         },
       ]}
     >
@@ -30,6 +42,7 @@ const Countdown = ({ duration, setDuration }) => {
         start, pause, reset,
       }) => (
         <div className="bg-secondary p-5 rounded-125">
+          {countdownIsEnd && play()}
           <TimeDisplayer Timer={Timer} />
           <br />
           <TimeController start={start} pause={pause} reset={reset} setDuration={setDuration} />
