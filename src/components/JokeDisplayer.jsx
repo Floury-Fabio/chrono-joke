@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const JokeDisplayer = ({ joke }) => (
-  <div className={`bg-secondary mb-5 p-3 ${joke ? '' : 'd-none'}`} style={{ borderRadius: '125px' }}>
+  <div className={`bg-secondary mb-5 p-3 rounded-125 ${joke ? '' : 'd-none'}`}>
     <p>
       { joke.question }
     </p>
