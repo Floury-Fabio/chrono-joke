@@ -9,7 +9,7 @@ import TimeDisplayer from 'components/TimeDisplayer';
 
 import getJoke from 'redux/middlewares/jokeMiddlewares';
 
-const TimerComponent = ({ duration }) => {
+const Countdown = ({ duration }) => {
   const dispatch = useDispatch();
 
   return (
@@ -39,8 +39,8 @@ const TimerComponent = ({ duration }) => {
   );
 };
 
-export default TimerComponent;
+export default Countdown;
 
-TimerComponent.propTypes = {
+Countdown.propTypes = {
   duration: PropTypes.number.isRequired,
 };

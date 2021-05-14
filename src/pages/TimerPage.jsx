@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import Countdown from 'components/Countdown';
 import JokeDisplayer from 'components/JokeDisplayer';
-import TimerComponent from 'components/TimerComponent';
 import TimerSetting from 'components/TimerSetting';
 
 const TimerPage = () => {
@@ -13,7 +13,7 @@ const TimerPage = () => {
     <>
       <JokeDisplayer joke={currentJoke} />
       { /* set key at duration in order to force re render of the component. */ }
-      <TimerComponent key={duration} duration={duration} />
+      <Countdown key={duration} duration={duration} />
       <TimerSetting duration={duration} setDuration={setDuration} />
     </>
   );
