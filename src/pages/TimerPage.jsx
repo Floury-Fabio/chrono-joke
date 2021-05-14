@@ -13,7 +13,7 @@ const TimerPage = () => {
     <>
       <JokeDisplayer joke={currentJoke} />
       { /* set key at duration in order to force re render of the component. */ }
-      <Countdown key={duration} duration={duration} />
+      <Countdown key={duration} duration={duration} setDuration={setDuration} />
       <TimerSetting duration={duration} setDuration={setDuration} />
     </>
   );
