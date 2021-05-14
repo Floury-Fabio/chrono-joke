@@ -15,8 +15,8 @@ const TimerSetting = ({ duration, setDuration }) => {
   return (
     <Form className="bg-secondary mt-5 p-2 w-25 rounded-125">
       <Form.Group controlId="formBasicEmail">
-        <Form.Label>Durée </Form.Label>
-        <Form.Control type="text" className="w-50 mt-2 m-auto" onChange={(e) => { handleInput(e); }} value={`${duration} min`} />
+        <Form.Label>Durée en minutes</Form.Label>
+        <Form.Control type="text" className="text-center w-50 mt-2 m-auto" onChange={(e) => { handleInput(e); }} value={duration} />
       </Form.Group>
     </Form>
   );
