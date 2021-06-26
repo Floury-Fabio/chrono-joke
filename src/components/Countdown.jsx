@@ -16,7 +16,7 @@ const Countdown = ({ duration, setDuration }) => {
   const dispatch = useDispatch();
   const [countdownIsEnd, setCountdownIsEnd] = useState(false);
 
-  const [play] = useSound(ding);
+  const [play] = useSound(ding, { volume: 0.30 });
 
   const fireJoke = () => {
     dispatch(getJoke());
